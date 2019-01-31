@@ -1,0 +1,12 @@
+c:\users\stephanie\source\repos\Browser\Browser\bin\Debug\Browser.exe.config
+c:\users\stephanie\source\repos\Browser\Browser\bin\Debug\Browser.exe
+c:\users\stephanie\source\repos\Browser\Browser\bin\Debug\Browser.pdb
+c:\users\stephanie\source\repos\Browser\Browser\bin\Debug\Browser.xml
+c:\users\stephanie\source\repos\Browser\Browser\obj\Debug\Browser.vbprojAssemblyReference.cache
+c:\users\stephanie\source\repos\Browser\Browser\obj\Debug\Browser.Browser.resources
+c:\users\stephanie\source\repos\Browser\Browser\obj\Debug\Browser.Resources.resources
+c:\users\stephanie\source\repos\Browser\Browser\obj\Debug\Browser.vbproj.GenerateResource.cache
+c:\users\stephanie\source\repos\Browser\Browser\obj\Debug\Browser.vbproj.CoreCompileInputs.cache
+c:\users\stephanie\source\repos\Browser\Browser\obj\Debug\Browser.exe
+c:\users\stephanie\source\repos\Browser\Browser\obj\Debug\Browser.xml
+c:\users\stephanie\source\repos\Browser\Browser\obj\Debug\Browser.pdb
