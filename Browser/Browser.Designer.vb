@@ -22,26 +22,34 @@ Partial Class Browser
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Browser))
         Me.SearchPanel = New System.Windows.Forms.Panel()
+        Me.BtnNewTab = New System.Windows.Forms.Button()
         Me.BtnMenu = New System.Windows.Forms.Button()
         Me.LinkText = New System.Windows.Forms.TextBox()
         Me.BtnHome = New System.Windows.Forms.Button()
         Me.BtnState = New System.Windows.Forms.Button()
         Me.BtnForward = New System.Windows.Forms.Button()
         Me.BtnBack = New System.Windows.Forms.Button()
-        Me.MainBrowser = New System.Windows.Forms.WebBrowser()
         Me.MenuPanel = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BtnSetHome = New System.Windows.Forms.Button()
+        Me.TabControl = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.MainBrowser = New System.Windows.Forms.WebBrowser()
+        Me.NewTabTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SearchPanel.SuspendLayout()
         Me.MenuPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SearchPanel
         '
         Me.SearchPanel.BackColor = System.Drawing.Color.Gainsboro
+        Me.SearchPanel.Controls.Add(Me.BtnNewTab)
         Me.SearchPanel.Controls.Add(Me.BtnMenu)
         Me.SearchPanel.Controls.Add(Me.LinkText)
         Me.SearchPanel.Controls.Add(Me.BtnHome)
@@ -52,8 +60,23 @@ Partial Class Browser
         Me.SearchPanel.Location = New System.Drawing.Point(0, 0)
         Me.SearchPanel.Name = "SearchPanel"
         Me.SearchPanel.Padding = New System.Windows.Forms.Padding(5)
-        Me.SearchPanel.Size = New System.Drawing.Size(1181, 42)
+        Me.SearchPanel.Size = New System.Drawing.Size(1181, 45)
         Me.SearchPanel.TabIndex = 0
+        '
+        'BtnNewTab
+        '
+        Me.BtnNewTab.BackgroundImage = Global.Browser.My.Resources.Resources.Browser_New_Tab
+        Me.BtnNewTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnNewTab.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro
+        Me.BtnNewTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnNewTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BtnNewTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNewTab.Location = New System.Drawing.Point(166, 9)
+        Me.BtnNewTab.Name = "BtnNewTab"
+        Me.BtnNewTab.Size = New System.Drawing.Size(24, 24)
+        Me.BtnNewTab.TabIndex = 6
+        Me.NewTabTip.SetToolTip(Me.BtnNewTab, "Creates a new tab")
+        Me.BtnNewTab.UseVisualStyleBackColor = True
         '
         'BtnMenu
         '
@@ -77,10 +100,10 @@ Partial Class Browser
         Me.LinkText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LinkText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LinkText.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkText.Location = New System.Drawing.Point(186, 8)
+        Me.LinkText.Font = New System.Drawing.Font("Helvetica", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkText.Location = New System.Drawing.Point(195, 8)
         Me.LinkText.Name = "LinkText"
-        Me.LinkText.Size = New System.Drawing.Size(882, 26)
+        Me.LinkText.Size = New System.Drawing.Size(873, 26)
         Me.LinkText.TabIndex = 4
         '
         'BtnHome
@@ -147,16 +170,6 @@ Partial Class Browser
         Me.BtnBack.TabIndex = 0
         Me.BtnBack.UseVisualStyleBackColor = False
         '
-        'MainBrowser
-        '
-        Me.MainBrowser.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainBrowser.Location = New System.Drawing.Point(0, 42)
-        Me.MainBrowser.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.MainBrowser.Name = "MainBrowser"
-        Me.MainBrowser.Size = New System.Drawing.Size(1181, 571)
-        Me.MainBrowser.TabIndex = 1
-        Me.MainBrowser.Url = New System.Uri("http://www.google.com", System.UriKind.Absolute)
-        '
         'MenuPanel
         '
         Me.MenuPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -196,23 +209,62 @@ Partial Class Browser
         Me.BtnSetHome.Text = "Set Home"
         Me.BtnSetHome.UseVisualStyleBackColor = False
         '
+        'TabControl
+        '
+        Me.TabControl.Controls.Add(Me.TabPage1)
+        Me.TabControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl.Font = New System.Drawing.Font("Helvetica", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl.Location = New System.Drawing.Point(0, 45)
+        Me.TabControl.Name = "TabControl"
+        Me.TabControl.SelectedIndex = 0
+        Me.TabControl.Size = New System.Drawing.Size(1181, 568)
+        Me.TabControl.TabIndex = 7
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.MainBrowser)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1173, 536)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Title"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'MainBrowser
+        '
+        Me.MainBrowser.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainBrowser.Location = New System.Drawing.Point(3, 3)
+        Me.MainBrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.MainBrowser.Name = "MainBrowser"
+        Me.MainBrowser.Size = New System.Drawing.Size(1167, 530)
+        Me.MainBrowser.TabIndex = 15
+        Me.MainBrowser.Url = New System.Uri("http://www.google.com", System.UriKind.Absolute)
+        '
+        'NewTabTip
+        '
+        Me.NewTabTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.NewTabTip.ToolTipTitle = "New Tab"
+        '
         'Browser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1181, 613)
         Me.Controls.Add(Me.MenuPanel)
-        Me.Controls.Add(Me.MainBrowser)
+        Me.Controls.Add(Me.TabControl)
         Me.Controls.Add(Me.SearchPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Browser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Browser 0.1"
+        Me.Text = "Browser 0.2"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.SearchPanel.ResumeLayout(False)
         Me.SearchPanel.PerformLayout()
         Me.MenuPanel.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -224,8 +276,12 @@ Partial Class Browser
     Friend WithEvents BtnHome As Button
     Friend WithEvents LinkText As TextBox
     Friend WithEvents BtnMenu As Button
-    Friend WithEvents MainBrowser As WebBrowser
     Friend WithEvents MenuPanel As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents BtnSetHome As Button
+    Friend WithEvents TabControl As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents MainBrowser As WebBrowser
+    Friend WithEvents BtnNewTab As Button
+    Friend WithEvents NewTabTip As ToolTip
 End Class

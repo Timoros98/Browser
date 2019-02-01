@@ -136,6 +136,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Browser New Tab.png" />
     <None Include="Browser Stop Load.png" />
     <None Include="Browser Refresh.png" />
     <None Include="Browser Menu.png" />

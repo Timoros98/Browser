@@ -1,25 +1,38 @@
 ﻿Public Class Browser
+
     Dim StopImage As Image = My.Resources.Browser_Stop_Load
     Dim RefreshImage As Image = My.Resources.Browser_Refresh
+    Dim page As New TabPage("Google")
+    Dim wb As New WebBrowser()
+
 
     Private Sub MainBrowser_Navigated(sender As Object, e As WebBrowserNavigatedEventArgs) Handles MainBrowser.Navigated
         LinkText.Text = MainBrowser.Url.ToString
         BtnState.BackgroundImage = My.Resources.Browser_Refresh
+        Me.TabControl.SelectedTab.Text = MainBrowser.DocumentTitle
+        If CType(TabControl.SelectedTab.Controls.Item(0), WebBrowser).DocumentTitle.Length > 10 Then
+            TabControl.SelectedTab.Text = CType(TabControl.SelectedTab.Controls.Item(0), WebBrowser).DocumentTitle.Substring(0, 9) & "..."
+        Else
+            TabControl.SelectedTab.Text = CType(TabControl.SelectedTab.Controls.Item(0), WebBrowser).DocumentTitle
+        End If
     End Sub
 
     Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
         MainBrowser.GoBack()
         MenuPanel.Visible = False
+        wb.GoBack()
     End Sub
 
     Private Sub BtnForward_Click(sender As Object, e As EventArgs) Handles BtnForward.Click
         MainBrowser.GoForward()
         MenuPanel.Visible = False
+        wb.GoForward()
     End Sub
 
     Private Sub BtnHome_Click(sender As Object, e As EventArgs) Handles BtnHome.Click
         MainBrowser.Navigate(My.Settings.Homepage)
         MenuPanel.Visible = False
+        wb.Navigate(My.Settings.Homepage)
     End Sub
 
     Private Sub LinkText_KeyDown(sender As Object, e As KeyEventArgs) Handles LinkText.KeyDown
@@ -50,7 +63,7 @@
         Else
             My.Settings.Homepage = LinkText.Text
             My.Settings.Save()
-            MessageBox.Show("Your homepage has been set up successfully!", "Success!")
+            MessageBox.Show("Your homepage " + My.Settings.Homepage + " has been set up successfully!", "Success!")
         End If
     End Sub
 
@@ -61,8 +74,10 @@
     Private Sub BtnState_Click(sender As Object, e As EventArgs) Handles BtnState.Click
         If My.Settings.State = 0 Then
             MainBrowser.Stop()
+            wb.Stop()
         Else
             MainBrowser.Refresh()
+            wb.Refresh()
         End If
     End Sub
 
@@ -82,5 +97,12 @@
         Else
 
         End If
+    End Sub
+
+    Private Sub BtnNewTab_Click(sender As Object, e As EventArgs) Handles BtnNewTab.Click
+        Me.TabControl.TabPages.Add(page)
+        page.Controls.Add(wb)
+        wb.Dock = DockStyle.Fill
+        wb.Navigate(New Uri("http://www.google.com"))
     End Sub
 End Class
