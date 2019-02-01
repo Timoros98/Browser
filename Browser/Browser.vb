@@ -73,4 +73,14 @@
             My.Settings.State = 1
         End If
     End Sub
+
+    Private Sub Browser_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", "Browser.exe", Nothing) Is Nothing Then
+            My.Computer.Registry.SetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", "Browser.exe", "11001", Microsoft.Win32.RegistryValueKind.DWord)
+            MessageBox.Show("Because is the first time that you opening this application you have to restart it to ensure everything is ok with some registry values! Thank you!", "Restart!")
+            Me.Close()
+        Else
+
+        End If
+    End Sub
 End Class

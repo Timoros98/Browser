@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Browser
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Browser
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Browser))
         Me.SearchPanel = New System.Windows.Forms.Panel()
@@ -52,7 +52,7 @@ Partial Class Browser
         Me.SearchPanel.Location = New System.Drawing.Point(0, 0)
         Me.SearchPanel.Name = "SearchPanel"
         Me.SearchPanel.Padding = New System.Windows.Forms.Padding(5)
-        Me.SearchPanel.Size = New System.Drawing.Size(800, 42)
+        Me.SearchPanel.Size = New System.Drawing.Size(1181, 42)
         Me.SearchPanel.TabIndex = 0
         '
         'BtnMenu
@@ -66,7 +66,7 @@ Partial Class Browser
         Me.BtnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
         Me.BtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMenu.Location = New System.Drawing.Point(762, 5)
+        Me.BtnMenu.Location = New System.Drawing.Point(1143, 5)
         Me.BtnMenu.Name = "BtnMenu"
         Me.BtnMenu.Size = New System.Drawing.Size(30, 30)
         Me.BtnMenu.TabIndex = 5
@@ -77,10 +77,10 @@ Partial Class Browser
         Me.LinkText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LinkText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LinkText.Font = New System.Drawing.Font("Helvetica", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkText.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkText.Location = New System.Drawing.Point(186, 8)
         Me.LinkText.Name = "LinkText"
-        Me.LinkText.Size = New System.Drawing.Size(501, 26)
+        Me.LinkText.Size = New System.Drawing.Size(882, 26)
         Me.LinkText.TabIndex = 4
         '
         'BtnHome
@@ -153,7 +153,7 @@ Partial Class Browser
         Me.MainBrowser.Location = New System.Drawing.Point(0, 42)
         Me.MainBrowser.MinimumSize = New System.Drawing.Size(20, 20)
         Me.MainBrowser.Name = "MainBrowser"
-        Me.MainBrowser.Size = New System.Drawing.Size(800, 408)
+        Me.MainBrowser.Size = New System.Drawing.Size(1181, 571)
         Me.MainBrowser.TabIndex = 1
         Me.MainBrowser.Url = New System.Uri("http://www.google.com", System.UriKind.Absolute)
         '
@@ -163,7 +163,7 @@ Partial Class Browser
         Me.MenuPanel.BackColor = System.Drawing.Color.Gainsboro
         Me.MenuPanel.Controls.Add(Me.PictureBox1)
         Me.MenuPanel.Controls.Add(Me.BtnSetHome)
-        Me.MenuPanel.Location = New System.Drawing.Point(645, 42)
+        Me.MenuPanel.Location = New System.Drawing.Point(1026, 42)
         Me.MenuPanel.Name = "MenuPanel"
         Me.MenuPanel.Size = New System.Drawing.Size(155, 369)
         Me.MenuPanel.TabIndex = 6
@@ -188,7 +188,7 @@ Partial Class Browser
         Me.BtnSetHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnSetHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
         Me.BtnSetHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSetHome.Font = New System.Drawing.Font("Helvetica", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSetHome.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSetHome.Location = New System.Drawing.Point(3, 9)
         Me.BtnSetHome.Name = "BtnSetHome"
         Me.BtnSetHome.Size = New System.Drawing.Size(109, 35)
@@ -200,14 +200,14 @@ Partial Class Browser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1181, 613)
         Me.Controls.Add(Me.MenuPanel)
         Me.Controls.Add(Me.MainBrowser)
         Me.Controls.Add(Me.SearchPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Browser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Browser"
+        Me.Text = "Browser 0.1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.SearchPanel.ResumeLayout(False)
         Me.SearchPanel.PerformLayout()
