@@ -30,9 +30,13 @@
     End Sub
 
     Private Sub BtnHome_Click(sender As Object, e As EventArgs) Handles BtnHome.Click
-        MainBrowser.Navigate(My.Settings.Homepage)
+
         MenuPanel.Visible = False
-        wb.Navigate(My.Settings.Homepage)
+        If TabControl.SelectedIndex = 0 Then
+            MainBrowser.Navigate(My.Settings.Homepage)
+        Else
+            wb.Navigate(My.Settings.Homepage)
+        End If
     End Sub
 
     Private Sub LinkText_KeyDown(sender As Object, e As KeyEventArgs) Handles LinkText.KeyDown
@@ -104,5 +108,9 @@
         page.Controls.Add(wb)
         wb.Dock = DockStyle.Fill
         wb.Navigate(New Uri("http://www.google.com"))
+    End Sub
+
+    Private Sub BtnDeleteTab_Click(sender As Object, e As EventArgs) Handles BtnDeleteTab.Click
+        TabControl.TabPages.Remove(TabControl.SelectedTab)
     End Sub
 End Class

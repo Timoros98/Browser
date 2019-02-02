@@ -39,6 +39,8 @@ Partial Class Browser
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.MainBrowser = New System.Windows.Forms.WebBrowser()
         Me.NewTabTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnDeleteTab = New System.Windows.Forms.Button()
+        Me.DeleteTabTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SearchPanel.SuspendLayout()
         Me.MenuPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +51,7 @@ Partial Class Browser
         'SearchPanel
         '
         Me.SearchPanel.BackColor = System.Drawing.Color.Gainsboro
+        Me.SearchPanel.Controls.Add(Me.BtnDeleteTab)
         Me.SearchPanel.Controls.Add(Me.BtnNewTab)
         Me.SearchPanel.Controls.Add(Me.BtnMenu)
         Me.SearchPanel.Controls.Add(Me.LinkText)
@@ -246,6 +249,29 @@ Partial Class Browser
         Me.NewTabTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.NewTabTip.ToolTipTitle = "New Tab"
         '
+        'BtnDeleteTab
+        '
+        Me.BtnDeleteTab.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnDeleteTab.BackColor = System.Drawing.Color.Gainsboro
+        Me.BtnDeleteTab.BackgroundImage = Global.Browser.My.Resources.Resources.Browser_Stop_Load
+        Me.BtnDeleteTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDeleteTab.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnDeleteTab.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro
+        Me.BtnDeleteTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnDeleteTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BtnDeleteTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnDeleteTab.Location = New System.Drawing.Point(1074, 8)
+        Me.BtnDeleteTab.Name = "BtnDeleteTab"
+        Me.BtnDeleteTab.Size = New System.Drawing.Size(26, 26)
+        Me.BtnDeleteTab.TabIndex = 7
+        Me.DeleteTabTip.SetToolTip(Me.BtnDeleteTab, "Delete currently selected tab")
+        Me.BtnDeleteTab.UseVisualStyleBackColor = False
+        '
+        'DeleteTabTip
+        '
+        Me.DeleteTabTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.DeleteTabTip.ToolTipTitle = "Delete Tab"
+        '
         'Browser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -284,4 +310,6 @@ Partial Class Browser
     Friend WithEvents MainBrowser As WebBrowser
     Friend WithEvents BtnNewTab As Button
     Friend WithEvents NewTabTip As ToolTip
+    Friend WithEvents BtnDeleteTab As Button
+    Friend WithEvents DeleteTabTip As ToolTip
 End Class
